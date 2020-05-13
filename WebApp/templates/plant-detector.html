@@ -1,0 +1,96 @@
+{% extends "plant-base.html" %} 
+
+{% block index %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">Crop Disease Detector Application</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="true" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#about">How to Use</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#detect">Detector</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="bg-dark text-white">
+  <div class="container text-center">
+    <h1 class="text-uppercase"><b>Crop Disease Detector</b></h1>
+    <p class="lead">This is a model for detection of the disease effecting your crop based on image input and Convolutional Neural Network image classifier</p>
+  </div>
+</header>
+
+  <div class="container bg-light" style="margin-top:3vh;margin-bottom:5vh;">
+    <div class="row">
+      <div class="col-12 mx-auto" >
+        <center>
+          <h2><br>HOW TO ASSESS YOUR CROP:</h2>
+        
+      <!-- </div>
+      <div class="col-6 mx-auto" > -->
+          <b>1.</b> Upload Image of Crop leaf to detector<br>
+          <b>2.</b> Click on - Assessment<br>
+          <b>3.</b> Check if your Crop is Healthy or Infected<br>
+          <b>4.</b> Learn more about the disease by recieving Information on its Symptoms and Pracutions<br>
+          </center>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid bg-dark text-white" id="detect" style="padding-top:5vh;padding-bottom:5vh;">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <center>
+          <h1>CROP DISEASE DETECTOR</h1>
+          <div>
+              <form id="upload-file" method="post" enctype="multipart/form-data">
+                  <label for="imageUpload" class="upload-label" style="color:black">
+                      Choose Image
+                  </label>
+                  <input type="file" name="image" id="imageUpload" accept=".png, .jpg, .jpeg">
+              </form>
+            </div>
+          </center>
+        </div>    
+  </div>
+  <div>
+    <center>
+      <div class="image-section" style="display:none;">
+        <hr style="color:white;background-color:white;" width="50%">
+          <div class="img-preview">
+              <div id="imagePreview">
+              </div>
+          </div>
+          <div>
+              <button type="button" class="upload-label" style="color:black" id="btn-predict"> Go To Assessment </button>
+          </div>
+      </div>
+      <center>
+  
+      <div class="loader" style="display:none;"></div>
+      
+      <p class="text-uppercase" id="result" style="font-size:30px;">
+          <span> </span>
+      </p>
+      <p class="text-uppercase" id="answer" style="font-size:30px; color:lightblue"> 
+          <span> </span>
+      </p>
+
+      <div class="info" style="display:none;">
+            <a href="\info" type="button" class="upload-label" style="color:black" id="btn-info"> Get Disease Information </a>
+      </div>
+      <br><br>
+  
+  </div>
+{% endblock index %}
+
+
+
